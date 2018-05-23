@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 namespace WpfApplication1 {
     public class Meme {
 
-        public Uri Source { set; get; }
-        public List<string> Answers = new List<string>();
+        public string Source { set; get; }
+        public List<string> Answers { get; set; }
+        public Meme()
+        {
+            Answers = new List<string>();
+        }
 
     }
 }

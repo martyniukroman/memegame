@@ -24,9 +24,10 @@ namespace WpfApplication1 {
         public MainWindow() {
             InitializeComponent();
             Meme m = new Meme();
-            m.Source = new Uri(@"http://i0.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg");
+            m.Source = @"http://i0.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg";
             m.Answers.Add("Harold");
-            XmlSerializer s = new XmlSerializer(typeof(Meme));
+            XmlSerializer s = new XmlSerializer(typeof (List<Meme>));
+            list.Add(m);
             using (StreamWriter sw = new StreamWriter(@"C:\Users\Admin\Source\Repos\memegame\WpfApplication1\WpfApplication1\memeBase.xml"))
             {
                 s.Serialize(sw, list);
