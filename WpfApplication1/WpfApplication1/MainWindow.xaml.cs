@@ -20,18 +20,20 @@ namespace WpfApplication1 {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
-        public List<Meme> list = new List<Meme>();
+        public List<Meme> list;
         public MainWindow() {
             InitializeComponent();
-            Meme m = new Meme();
-            m.Source = @"http://i0.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg";
-            m.Answers.Add("Harold");
-            XmlSerializer s = new XmlSerializer(typeof (List<Meme>));
-            list.Add(m);
-            using (StreamWriter sw = new StreamWriter(@"C:\Users\Admin\Source\Repos\memegame\WpfApplication1\WpfApplication1\memeBase.xml"))
+            XmlSerializer s = new XmlSerializer(typeof(List<Meme>));
+            Random rand = new Random();
+            using (StreamReader sr = new StreamReader(@"C:\Users\Admin\Source\Repos\memegame\WpfApplication1\WpfApplication1\memeBase.xml"))
             {
-                s.Serialize(sw, list);
+             list=(s.Deserialize(sr) as List<Meme>);
             }
+            BitmapImage bmp = new BitmapImage();
+            bmp.BeginInit();
+            bmp.UriSource = new Uri(list[1].Source);
+            bmp.EndInit();
+            mainImage.Source = bmp;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

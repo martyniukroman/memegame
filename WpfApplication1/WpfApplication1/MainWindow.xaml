@@ -11,7 +11,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
-        <Image Source="http://i0.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg" />
+        <Image Name="mainImage" />
         <Grid Name="pictureCover">
             <Grid.RowDefinitions>
                 <RowDefinition/>

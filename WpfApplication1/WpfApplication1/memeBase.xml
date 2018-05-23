@@ -6,4 +6,10 @@
       <string>Harold</string>
     </Answers>
   </Meme>
+  <Meme>
+    <Source>http://i0.kym-cdn.com/entries/icons/facebook/000/016/362/tumblr_nb7jgq9kcR1slfxluo1_1280.jpg</Source>
+    <Answers>
+      <string>Pepe</string>
+    </Answers>
+  </Meme>
 </ArrayOfMeme>
