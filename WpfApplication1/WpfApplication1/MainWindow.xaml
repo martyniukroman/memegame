@@ -7,25 +7,47 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Image Source="http://i0.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg"/>
-        <Grid Name="pictureCover" Opacity="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-            <Image Grid.RowSpan="4" Grid.ColumnSpan="4" Source="http://i0.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Height="20">
+            <MenuItem Header="New game" FontSize="13" Click="MenuItem_Click"/>
 
-            </Grid>
+        </Menu>
+        <Image Grid.Row="1" Source="http://i0.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg" />
+        <Grid Name="pictureCover" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Opacity="100"  Grid.Column="0" Grid.Row="0" Click="Button_Click"/>
+            <Button  Grid.Column="1" Grid.Row="0" Click="Button_Click"/>
+            <Button   Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
+            <Button Grid.Column="3" Grid.Row="0" Click="Button_Click"/>
+            <Button  Grid.Column="0" Grid.Row="1" Click="Button_Click"/>
+            <Button   Grid.Column="1" Grid.Row="1" Click="Button_Click"/>
+            <Button  Grid.Column="2" Grid.Row="1" Click="Button_Click"/>
+            <Button  Grid.Column="3" Grid.Row="1" Click="Button_Click"/>
+            <Button  Grid.Column="0" Grid.Row="2" Click="Button_Click"/>
+            <Button  Grid.Column="1" Grid.Row="2" Click="Button_Click"/>
+            <Button  Grid.Column="2" Grid.Row="2" Click="Button_Click"/>
+            <Button  Grid.Column="3" Grid.Row="2" Click="Button_Click"/>
+            <Button  Grid.Column="0" Grid.Row="3" Click="Button_Click"/>
+            <Button  Grid.Column="1" Grid.Row="3" Click="Button_Click"/>
+            <Button  Grid.Column="2" Grid.Row="3" Click="Button_Click"/>
+            <Button  Grid.Column="3" Grid.Row="3" Click="Button_Click"/>
+        </Grid>
 
-        
+
     </Grid>
 
 </Window>

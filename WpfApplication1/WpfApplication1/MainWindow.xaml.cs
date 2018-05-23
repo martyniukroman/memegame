@@ -21,5 +21,18 @@ namespace WpfApplication1 {
         public MainWindow() {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            (sender as Button).Opacity = 0;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Button item in pictureCover.Children)
+            {
+                item.Opacity = 100;
+            }
+        }
     }
 }
