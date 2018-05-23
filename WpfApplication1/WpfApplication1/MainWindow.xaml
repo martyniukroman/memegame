@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Image Source="http://i0.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg"/>
+        <Grid Name="pictureCover" Opacity="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+            <Image Grid.RowSpan="4" Grid.ColumnSpan="4" Source="http://i0.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg"/>
+
+            </Grid>
+
         
     </Grid>
+
 </Window>
