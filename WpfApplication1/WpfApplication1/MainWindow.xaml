@@ -30,42 +30,53 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Opacity="100"  Grid.Column="0" Grid.Row="0" Click="Button_Click"/>
-            <Button  Grid.Column="1" Grid.Row="0" Click="Button_Click"/>
-            <Button   Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
+            <Button Grid.Column="1" Grid.Row="0" Click="Button_Click"/>
+            <Button Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
             <Button Grid.Column="3" Grid.Row="0" Click="Button_Click"/>
-            <Button  Grid.Column="0" Grid.Row="1" Click="Button_Click"/>
-            <Button   Grid.Column="1" Grid.Row="1" Click="Button_Click"/>
-            <Button  Grid.Column="2" Grid.Row="1" Click="Button_Click"/>
-            <Button  Grid.Column="3" Grid.Row="1" Click="Button_Click"/>
-            <Button  Grid.Column="0" Grid.Row="2" Click="Button_Click"/>
-            <Button  Grid.Column="1" Grid.Row="2" Click="Button_Click"/>
-            <Button  Grid.Column="2" Grid.Row="2" Click="Button_Click"/>
-            <Button  Grid.Column="3" Grid.Row="2" Click="Button_Click"/>
-            <Button  Grid.Column="0" Grid.Row="3" Click="Button_Click"/>
-            <Button  Grid.Column="1" Grid.Row="3" Click="Button_Click"/>
-            <Button  Grid.Column="2" Grid.Row="3" Click="Button_Click"/>
-            <Button  Grid.Column="3" Grid.Row="3" Click="Button_Click"/>
-            <Button  Grid.Column="0" Grid.Row="4" Click="Button_Click"/>
-            <Button  Grid.Column="1" Grid.Row="4" Click="Button_Click"/>
-            <Button  Grid.Column="2" Grid.Row="4" Click="Button_Click"/>
-            <Button  Grid.Column="3" Grid.Row="4" Click="Button_Click"/>
-            <Button  Grid.Column="0" Grid.Row="5" Click="Button_Click"/>
-            <Button  Grid.Column="1" Grid.Row="5" Click="Button_Click"/>
-            <Button  Grid.Column="2" Grid.Row="5" Click="Button_Click"/>
-            <Button  Grid.Column="3" Grid.Row="5" Click="Button_Click"/>
-            <Button  Grid.Column="4" Grid.Row="5" Click="Button_Click"/>
-            <Button  Grid.Column="5" Grid.Row="5" Click="Button_Click"/>
-            <Button  Grid.Column="4" Grid.Row="4" Click="Button_Click"/>
-            <Button  Grid.Column="5" Grid.Row="4" Click="Button_Click"/>
-            <Button  Grid.Column="4" Grid.Row="3" Click="Button_Click"/>
-            <Button  Grid.Column="5" Grid.Row="3" Click="Button_Click"/>
-            <Button  Grid.Column="4" Grid.Row="2" Click="Button_Click"/>
-            <Button  Grid.Column="5" Grid.Row="2" Click="Button_Click"/>
-            <Button  Grid.Column="4" Grid.Row="1" Click="Button_Click"/>
-            <Button  Grid.Column="5" Grid.Row="1" Click="Button_Click"/>
-            <Button  Grid.Column="4" Grid.Row="0" Click="Button_Click"/>
-            <Button  Grid.Column="5" Grid.Row="0" Click="Button_Click"/>
+            <Button Grid.Column="0" Grid.Row="1" Click="Button_Click"/>
+            <Button Grid.Column="1" Grid.Row="1" Click="Button_Click"/>
+            <Button Grid.Column="2" Grid.Row="1" Click="Button_Click"/>
+            <Button Grid.Column="3" Grid.Row="1" Click="Button_Click"/>
+            <Button Grid.Column="0" Grid.Row="2" Click="Button_Click"/>
+            <Button Grid.Column="1" Grid.Row="2" Click="Button_Click"/>
+            <Button Grid.Column="2" Grid.Row="2" Click="Button_Click"/>
+            <Button Grid.Column="3" Grid.Row="2" Click="Button_Click"/>
+            <Button Grid.Column="0" Grid.Row="3" Click="Button_Click"/>
+            <Button Grid.Column="1" Grid.Row="3" Click="Button_Click"/>
+            <Button Grid.Column="2" Grid.Row="3" Click="Button_Click"/>
+            <Button Grid.Column="3" Grid.Row="3" Click="Button_Click"/>
+            <Button Grid.Column="0" Grid.Row="4" Click="Button_Click"/>
+            <Button Grid.Column="1" Grid.Row="4" Click="Button_Click"/>
+            <Button Grid.Column="2" Grid.Row="4" Click="Button_Click"/>
+            <Button Grid.Column="3" Grid.Row="4" Click="Button_Click"/>
+            <Button Grid.Column="0" Grid.Row="5" Click="Button_Click"/>
+            <Button Grid.Column="1" Grid.Row="5" Click="Button_Click"/>
+            <Button Grid.Column="2" Grid.Row="5" Click="Button_Click"/>
+            <Button Grid.Column="3" Grid.Row="5" Click="Button_Click"/>
+            <Button Grid.Column="4" Grid.Row="5" Click="Button_Click"/>
+            <Button Grid.Column="5" Grid.Row="5" Click="Button_Click"/>
+            <Button Grid.Column="4" Grid.Row="4" Click="Button_Click"/>
+            <Button Grid.Column="5" Grid.Row="4" Click="Button_Click"/>
+            <Button Grid.Column="4" Grid.Row="3" Click="Button_Click"/>
+            <Button Grid.Column="5" Grid.Row="3" Click="Button_Click"/>
+            <Button Grid.Column="4" Grid.Row="2" Click="Button_Click"/>
+            <Button Grid.Column="5" Grid.Row="2" Click="Button_Click"/>
+            <Button Grid.Column="4" Grid.Row="1" Click="Button_Click"/>
+            <Button Grid.Column="5" Grid.Row="1" Click="Button_Click"/>
+            <Button Grid.Column="4" Grid.Row="0" Click="Button_Click"/>
+            <Button Grid.Column="5" Grid.Row="0" Click="Button_Click"/>
         </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="98*"/>
+                <RowDefinition Height="99*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Your answer" HorizontalAlignment="Center"/>
+            <TextBox Grid.Row="1" Name="textBoxAnswer"/>
+        </Grid>
+
     </Grid>
 
 </Window>
