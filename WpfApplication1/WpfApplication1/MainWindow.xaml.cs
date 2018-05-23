@@ -15,19 +15,22 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
-namespace WpfApplication1 {
+namespace WpfApplication1
+{
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window {
+    public partial class MainWindow : Window
+    {
         public List<Meme> list;
-        public MainWindow() {
+        public MainWindow()
+        {
             InitializeComponent();
             XmlSerializer s = new XmlSerializer(typeof(List<Meme>));
             Random rand = new Random();
             using (StreamReader sr = new StreamReader(@"C:\Users\Admin\Source\Repos\memegame\WpfApplication1\WpfApplication1\memeBase.xml"))
             {
-             list=(s.Deserialize(sr) as List<Meme>);
+                list = (s.Deserialize(sr) as List<Meme>);
             }
             BitmapImage bmp = new BitmapImage();
             bmp.BeginInit();
