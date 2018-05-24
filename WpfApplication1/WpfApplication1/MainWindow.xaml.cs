@@ -111,10 +111,10 @@ namespace WpfApplication1
 
             int temp = randomMeme;
 
-            while (true)
-            {
-                if (randomMeme == temp)
-                {
+            System.Diagnostics.Process.Start(list[randomMeme].LinkToMeme);
+
+            while (true) {
+                if (randomMeme == temp) {
                     randomMeme = rand.Next(0, list.Count);
                 }
                 else
@@ -140,7 +140,7 @@ namespace WpfApplication1
             totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
             correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
 
-            System.Diagnostics.Process.Start(list[temp].LinkToMeme);
+            
 
         }
 
