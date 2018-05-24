@@ -58,44 +58,47 @@ namespace WpfApplication1
 
         private void checkAnswer_Click_1(object sender, RoutedEventArgs e)
         {
-            string lowercaseAnswer="";
+            string lowercaseAnswer;
             int temp = randomMeme;
-            for (int i = 0; i < list[randomMeme].Answers.Count; i++)
+            if (AnswerBox.Text != "")
             {
-           
-                lowercaseAnswer = AnswerBox.Text.ToLower();
-                if (list[randomMeme].Answers[i].Contains(lowercaseAnswer))
+                for (int i = 0; i < list[randomMeme].Answers.Count; i++)
                 {
-                    correctAnswers++;
-                    randomMeme = rand.Next(0, list.Count);
-                    while (true)
-                    {
-                        if (randomMeme == temp)
-                        {
-                            randomMeme = rand.Next(0, list.Count);
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
 
-                    BitmapImage bmp = new BitmapImage();
-                    bmp.BeginInit();
-                    bmp.UriSource = new Uri(list[randomMeme].Source);
-                    bmp.EndInit();
-                    mainImage.Source = bmp;
-                    foreach (Button item in pictureCover.Children)
+                    lowercaseAnswer = AnswerBox.Text.ToLower();
+                    if (list[randomMeme].Answers[i].Contains(lowercaseAnswer))
                     {
-                        item.Opacity = 100;
+                        correctAnswers++;
+                        randomMeme = rand.Next(0, list.Count);
+                        while (true)
+                        {
+                            if (randomMeme == temp)
+                            {
+                                randomMeme = rand.Next(0, list.Count);
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        BitmapImage bmp = new BitmapImage();
+                        bmp.BeginInit();
+                        bmp.UriSource = new Uri(list[randomMeme].Source);
+                        bmp.EndInit();
+                        mainImage.Source = bmp;
+                        foreach (Button item in pictureCover.Children)
+                        {
+                            item.Opacity = 100;
+                        }
+                        break;
                     }
-                    break;
                 }
+                totalTries++;
+                AnswerBox.Text = "";
+                totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
+                correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
             }
-            totalTries++;
-            AnswerBox.Text = "";
-            totalTriesLabel.Content ="Total tries: "+ totalTries.ToString();
-            correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
+           
         }
     }
 }
