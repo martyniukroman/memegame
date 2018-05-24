@@ -23,18 +23,22 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         public List<Meme> list;
+        int randomMeme = 0;
+        int correctAnswers = 0;
+        int totalTries = 0;
+        Random rand = new Random();
         public MainWindow()
         {
             InitializeComponent();
             XmlSerializer s = new XmlSerializer(typeof(List<Meme>));
-            Random rand = new Random();
             using (StreamReader sr = new StreamReader(@"C:\Users\Admin\Source\Repos\memegame\WpfApplication1\WpfApplication1\memeBase.xml"))
             {
                 list = (s.Deserialize(sr) as List<Meme>);
             }
+            randomMeme = rand.Next(0, list.Count);
             BitmapImage bmp = new BitmapImage();
             bmp.BeginInit();
-            bmp.UriSource = new Uri(list[1].Source);
+            bmp.UriSource = new Uri(list[randomMeme].Source);
             bmp.EndInit();
             mainImage.Source = bmp;
         }
@@ -50,6 +54,49 @@ namespace WpfApplication1
             {
                 item.Opacity = 100;
             }
+        }
+
+        private void checkAnswer_Click_1(object sender, RoutedEventArgs e)
+        {
+            string lowercaseAnswer="";
+            int temp = randomMeme;
+            for (int i = 0; i < list[randomMeme].Answers.Count; i++)
+            {
+           
+                lowercaseAnswer = AnswerBox.Text.ToLower();
+                if (list[randomMeme].Answers[i].Contains(lowercaseAnswer))
+                {
+                    correctAnswers++;
+                    randomMeme = rand.Next(0, list.Count);
+                    while (true)
+                    {
+                        if (randomMeme == temp)
+                        {
+                            randomMeme = rand.Next(0, list.Count);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+          
+                    BitmapImage bmp = new BitmapImage();
+                    bmp.BeginInit();
+                    bmp.UriSource = new Uri(list[randomMeme].Source);
+                    bmp.EndInit();
+                    mainImage.Source = bmp;
+                    foreach (Button item in pictureCover.Children)
+                    {
+                        item.Opacity = 100;
+                    }
+                    break;
+                }
+            }
+            totalTries++;
+            AnswerBox.Text = "";
+            totalTriesLabel.Content ="Total tries: "+ totalTries.ToString();
+            correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
         }
     }
 }

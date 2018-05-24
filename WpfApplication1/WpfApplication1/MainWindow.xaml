@@ -70,11 +70,16 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="30"/>
-                <RowDefinition Height="98*"/>
-                <RowDefinition Height="99*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
-            <Label Content="Your answer" HorizontalAlignment="Center"/>
-            <TextBox Grid.Row="1" Name="textBoxAnswer"/>
+            <Label Content="Your answer" HorizontalAlignment="Center" Width="74"/>
+            <TextBox Name="AnswerBox" Grid.Row="1" FontSize="20" TextAlignment="Right"/>
+            <Button Grid.Row="2" Content="Check answer" FontSize="17" FontWeight="Bold" Click="checkAnswer_Click_1" />
+            <Label Name="totalTriesLabel" Grid.Row="3" Content="Total tries: " FontSize="17"/>
+            <Label Name="correctAnswersLabel" Grid.Row="4" Content="Correct answers: " FontSize="17"/>
         </Grid>
 
     </Grid>
