@@ -33,34 +33,33 @@ namespace WpfApplication1
         {
             InitializeComponent();
             XmlSerializer s = new XmlSerializer(typeof(List<Meme>));
-            Uri uri = new Uri("memeBase.xml", UriKind.Relative);
+            Uri uri = new Uri(@"memeBase.xml", UriKind.Relative);
             using (StreamReader sr = new StreamReader(uri.ToString()))
             {
                 list = (s.Deserialize(sr) as List<Meme>);
             }
             randomMeme = rand.Next(0, list.Count);
-            string fileName =@"\pictures\" + list[randomMeme].Source;
+            string fileName = @"\pictures\" + list[randomMeme].Source;
             BitmapImage bmp = new BitmapImage();
             MessageBox.Show(fileName);
             bmp.BeginInit();
             bmp.UriSource = new Uri(fileName, UriKind.Relative);
             bmp.EndInit();
             mainImage.Source = bmp;
-            //ButtonCheck.IsEnabled = true;
-            //ButtonSkip.IsEnabled = false;
-            //ButtonAbout.IsEnabled = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (ClickedButtonCounter < 3) {
+            if (ClickedButtonCounter < 3)
+            {
                 (sender as Button).Opacity = 0;
                 ClickedButtonCounter++;
                 ButtonCheck.IsEnabled = true;
                 ButtonSkip.IsEnabled = true;
                 ButtonAbout.IsEnabled = false;
             }
-            else {
+            else
+            {
                 ButtonCheck.IsEnabled = false;
                 ButtonSkip.IsEnabled = true;
                 ButtonAbout.IsEnabled = true;
@@ -124,11 +123,10 @@ namespace WpfApplication1
         private void ButtonSkip_Click(object sender, RoutedEventArgs e)
         {
             int temp = randomMeme;
-
-           //System.Diagnostics.Process.Start(list[randomMeme].LinkToMeme);
-
-            while (true) {
-                if (randomMeme == temp) {
+            while (true)
+            {
+                if (randomMeme == temp)
+                {
                     randomMeme = rand.Next(0, list.Count);
                 }
                 else
@@ -139,11 +137,10 @@ namespace WpfApplication1
             string fileName = list[randomMeme].Source;
             string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"pictures\", fileName);
             BitmapImage bmp = new BitmapImage();
-                        bmp.BeginInit();
-                        bmp.UriSource = new Uri(path);
-                        bmp.EndInit();
-                        mainImage.Source = bmp;
-
+            bmp.BeginInit();
+            bmp.UriSource = new Uri(path);
+            bmp.EndInit();
+            mainImage.Source = bmp;
             foreach (Button item in pictureCover.Children)
             {
                 item.Opacity = 100;
@@ -155,7 +152,8 @@ namespace WpfApplication1
             correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
         }
 
-        private void ButtonAbout_Click(object sender, RoutedEventArgs e) {
+        private void ButtonAbout_Click(object sender, RoutedEventArgs e)
+        {
             System.Diagnostics.Process.Start(list[randomMeme].LinkToMeme);
         }
     }

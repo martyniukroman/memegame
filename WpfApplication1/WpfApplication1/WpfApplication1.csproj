@@ -98,8 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="memeBase.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="pictures\harold.jpg" />
     <Resource Include="pictures\idubbbz.jpg" />
     <Resource Include="pictures\pepe.jpg" />
