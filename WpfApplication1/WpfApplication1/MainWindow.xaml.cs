@@ -27,6 +27,8 @@ namespace WpfApplication1
         int correctAnswers = 0;
         int totalTries = 0;
         Random rand = new Random();
+        public int ClickedButtonCounter = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -44,11 +46,25 @@ namespace WpfApplication1
             bmp.UriSource = new Uri(fileName, UriKind.Relative);
             bmp.EndInit();
             mainImage.Source = bmp;
+            //ButtonCheck.IsEnabled = true;
+            //ButtonSkip.IsEnabled = false;
+            //ButtonAbout.IsEnabled = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            (sender as Button).Opacity = 0;
+            if (ClickedButtonCounter < 3) {
+                (sender as Button).Opacity = 0;
+                ClickedButtonCounter++;
+                ButtonCheck.IsEnabled = true;
+                ButtonSkip.IsEnabled = true;
+                ButtonAbout.IsEnabled = false;
+            }
+            else {
+                ButtonCheck.IsEnabled = false;
+                ButtonSkip.IsEnabled = true;
+                ButtonAbout.IsEnabled = true;
+            }
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -97,6 +113,7 @@ namespace WpfApplication1
                         break;
                     }
                 }
+                ClickedButtonCounter = 0;
                 totalTries++;
                 AnswerBox.Text = "";
                 totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
@@ -107,7 +124,8 @@ namespace WpfApplication1
         private void ButtonSkip_Click(object sender, RoutedEventArgs e)
         {
             int temp = randomMeme;
-            System.Diagnostics.Process.Start(list[randomMeme].LinkToMeme);
+
+           //System.Diagnostics.Process.Start(list[randomMeme].LinkToMeme);
 
             while (true) {
                 if (randomMeme == temp) {
@@ -130,10 +148,15 @@ namespace WpfApplication1
             {
                 item.Opacity = 100;
             }
+            ClickedButtonCounter = 0;
             totalTries++;
             AnswerBox.Text = "";
             totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
             correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
+        }
+
+        private void ButtonAbout_Click(object sender, RoutedEventArgs e) {
+            System.Diagnostics.Process.Start(list[randomMeme].LinkToMeme);
         }
     }
 }
