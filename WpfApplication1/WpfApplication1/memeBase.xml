@@ -2,6 +2,34 @@
 <ArrayOfMeme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <!-- comment -->
   <Meme>
+    <Source>thisisamerica.jpg</Source>
+    <Answers>
+      <string>america</string>
+      <string>this is america</string>
+    </Answers>
+    <LinkToMeme>http://knowyourmeme.com/memes/childish-gambinos-this-is-america</LinkToMeme>
+  </Meme>
+   <Meme>
+    <Source>friend.jpg</Source>
+    <Answers>
+      <string>friend</string>
+      <string>drug</string>
+      <string>dryg</string>
+      <string>друг</string> 
+    </Answers>
+    <LinkToMeme>http://knowyourmeme.com/memes/%D0%B4%D1%80%D1%83%D0%B3</LinkToMeme>
+  </Meme>
+  <Meme>
+    <Source>isthis.jpg</Source>
+    <Answers>
+      <string>is this a pigeon?</string>
+      <string>is this a pigeon</string>
+      <string>pigeon</string>
+      <string>is this</string> 
+    </Answers>
+    <LinkToMeme>http://knowyourmeme.com/memes/is-this-a-pigeon</LinkToMeme>
+  </Meme>
+  <Meme>
     <Source>bigenough.jpg</Source>
     <Answers>
       <string>big</string>

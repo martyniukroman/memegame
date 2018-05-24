@@ -109,7 +109,7 @@ namespace WpfApplication1
                         BitmapImage bmp = new BitmapImage();
                         bmp.BeginInit();
                         bmp.UriSource = new Uri(path);
-                        bmp.EndInit();
+                             bmp.EndInit(); // crash here
                         mainImage.Source = bmp;
                         foreach (Button item in pictureCover.Children)
                         {
@@ -145,7 +145,7 @@ namespace WpfApplication1
             BitmapImage bmp = new BitmapImage();
             bmp.BeginInit();
             bmp.UriSource = new Uri(path);
-            bmp.EndInit();
+                bmp.EndInit(); //crash here
             mainImage.Source = bmp;
             foreach (Button item in pictureCover.Children)
             {
