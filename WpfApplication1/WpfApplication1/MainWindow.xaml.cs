@@ -157,8 +157,6 @@ namespace WpfApplication1
             totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
             correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
 
-            
-
         }
 
         private void ButtonAbout_Click(object sender, RoutedEventArgs e) {

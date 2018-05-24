@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfMeme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Meme>
+    <Source>glob.jpg</Source>
+    <Answers>
+      <string>glob</string>
+      <string>Globglogabgalab</string>
+    </Answers>
+  <LinkToMeme>http://knowyourmeme.com/memes/globglogabgalab</LinkToMeme>
+  </Meme>
+  <Meme>
     <Source>harold.jpg</Source>
     <Answers>
       <string>harold</string>
