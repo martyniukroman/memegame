@@ -31,7 +31,7 @@ namespace WpfApplication1
         {
             InitializeComponent();
             XmlSerializer s = new XmlSerializer(typeof(List<Meme>));
-            using (StreamReader sr = new StreamReader(@"C:\Users\Admin\Source\Repos\memegame\WpfApplication1\WpfApplication1\memeBase.xml"))
+            using (StreamReader sr = new StreamReader("memeBase.xml"))
             {
                 list = (s.Deserialize(sr) as List<Meme>);
             }
@@ -80,7 +80,6 @@ namespace WpfApplication1
                         }
                     }
 
-          
                     BitmapImage bmp = new BitmapImage();
                     bmp.BeginInit();
                     bmp.UriSource = new Uri(list[randomMeme].Source);
