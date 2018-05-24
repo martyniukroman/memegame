@@ -67,7 +67,6 @@ namespace WpfApplication1
             {
                 for (int i = 0; i < list[randomMeme].Answers.Count; i++)
                 {
-
                     lowercaseAnswer = AnswerBox.Text.ToLower();
                     if (list[randomMeme].Answers[i].Contains(lowercaseAnswer))
                     {
@@ -103,14 +102,11 @@ namespace WpfApplication1
                 totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
                 correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
             }
-
         }
 
         private void ButtonSkip_Click(object sender, RoutedEventArgs e)
         {
-
             int temp = randomMeme;
-
             System.Diagnostics.Process.Start(list[randomMeme].LinkToMeme);
 
             while (true) {
@@ -134,16 +130,10 @@ namespace WpfApplication1
             {
                 item.Opacity = 100;
             }
-
             totalTries++;
             AnswerBox.Text = "";
             totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
             correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
-
-            
-
         }
-
-
     }
 }
