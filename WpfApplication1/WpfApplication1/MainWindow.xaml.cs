@@ -47,7 +47,7 @@ namespace WpfApplication1
             string fileName = @"\pictures\" + list[randomMeme].Source;
         
            BitmapImage bmp = new BitmapImage();
-            MessageBox.Show(fileName);
+           // MessageBox.Show(fileName);
             bmp.BeginInit();
             bmp.UriSource = new Uri(fileName, UriKind.Relative);
             bmp.EndInit();
@@ -180,14 +180,24 @@ namespace WpfApplication1
             if((sender as CheckBox).IsChecked == true) {
                 GridRight.Background = new SolidColorBrush(Colors.Gray);
                 foreach (var item in pictureCover.Children) {
-                    Background = new SolidColorBrush(Colors.Gray);
+                    (item as Button).Background = new SolidColorBrush(Colors.Gray);
                 }
+                foreach (var item in GridRight.Children) {
+                    if(item is Button)
+                    (item as Button).Background = new SolidColorBrush(Colors.Gray);
+                }
+                AnswerBox.Background = new SolidColorBrush(Colors.Gray);
             }
             else {
                 GridRight.Background = new SolidColorBrush(Colors.LightGray);
                 foreach (var item in pictureCover.Children) {
-                    Background = new SolidColorBrush(Colors.LightGray);
+                    (item as Button).Background = new SolidColorBrush(Colors.LightGray);
                 }
+                foreach (var item in GridRight.Children) {
+                    if (item is Button)
+                       (item as Button).Background = new SolidColorBrush(Colors.LightGray);
+                }
+                AnswerBox.Background = new SolidColorBrush(Colors.LightGray);
             }
         }
     }
