@@ -103,36 +103,41 @@ namespace WpfApplication1
                 totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
                 correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
             }
-           
+
         }
 
-        private void ButtonSkip_Click(object sender, RoutedEventArgs e) {
+        private void ButtonSkip_Click(object sender, RoutedEventArgs e)
+        {
 
             int temp = randomMeme;
 
-            while (true) {
-                if (randomMeme == temp) {
+            while (true)
+            {
+                if (randomMeme == temp)
+                {
                     randomMeme = rand.Next(0, list.Count);
                 }
-                else {
+                else
+                {
                     break;
                 }
             }
 
             BitmapImage bmp = new BitmapImage();
-                        bmp.BeginInit();
-                        bmp.UriSource = new Uri(list[randomMeme].Source);
-                        bmp.EndInit();
-                        mainImage.Source = bmp;
+            bmp.BeginInit();
+            bmp.UriSource = new Uri(list[randomMeme].Source);
+            bmp.EndInit();
+            mainImage.Source = bmp;
 
-                        foreach (Button item in pictureCover.Children) {
-                            item.Opacity = 100;
-                        }
+            foreach (Button item in pictureCover.Children)
+            {
+                item.Opacity = 100;
+            }
 
             totalTries++;
             AnswerBox.Text = "";
-                totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
-                correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
+            totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
+            correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
 
             System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=csqJK8wwaHw");
 
