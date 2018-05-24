@@ -103,10 +103,11 @@ namespace WpfApplication1
                 totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
                 correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
             }
-           
+
         }
 
-        private void ButtonSkip_Click(object sender, RoutedEventArgs e) {
+        private void ButtonSkip_Click(object sender, RoutedEventArgs e)
+        {
 
             int temp = randomMeme;
 
@@ -116,7 +117,8 @@ namespace WpfApplication1
                 if (randomMeme == temp) {
                     randomMeme = rand.Next(0, list.Count);
                 }
-                else {
+                else
+                {
                     break;
                 }
             }
@@ -128,14 +130,15 @@ namespace WpfApplication1
                         bmp.EndInit();
                         mainImage.Source = bmp;
 
-                        foreach (Button item in pictureCover.Children) {
-                            item.Opacity = 100;
-                        }
+            foreach (Button item in pictureCover.Children)
+            {
+                item.Opacity = 100;
+            }
 
             totalTries++;
             AnswerBox.Text = "";
-                totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
-                correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
+            totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
+            correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
 
             
 
