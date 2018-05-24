@@ -129,6 +129,8 @@ namespace WpfApplication1
                 totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
                 correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
 
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=csqJK8wwaHw");
+
         }
 
 
