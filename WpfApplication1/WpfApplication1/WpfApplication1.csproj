@@ -97,7 +97,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="memeBase.xml" />
+    <EmbeddedResource Include="memeBase.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Resource Include="pictures\harold.jpg" />
     <Resource Include="pictures\idubbbz.jpg" />
     <Resource Include="pictures\pepe.jpg" />

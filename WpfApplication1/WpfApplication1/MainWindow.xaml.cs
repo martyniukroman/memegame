@@ -33,14 +33,18 @@ namespace WpfApplication1
         {
             InitializeComponent();
             XmlSerializer s = new XmlSerializer(typeof(List<Meme>));
-            Uri uri = new Uri(@"memeBase.xml", UriKind.Relative);
-            using (StreamReader sr = new StreamReader(uri.ToString()))
+           // Uri xmlFile = new Uri("memebase.xml");
+           // Uri uri = new Uri(@"memeBase.xml", UriKind.Relative);
+          //  string path = Uri.UnescapeDataString(uri.MakeRelativeUri(xmlFile).ToString().Replace('/', '\\'));
+          //  MessageBox.Show(path);
+            using (StreamReader sr = new StreamReader("memebase.xml"))
             {
                 list = (s.Deserialize(sr) as List<Meme>);
             }
             randomMeme = rand.Next(0, list.Count);
             string fileName = @"\pictures\" + list[randomMeme].Source;
-            BitmapImage bmp = new BitmapImage();
+        
+           BitmapImage bmp = new BitmapImage();
             MessageBox.Show(fileName);
             bmp.BeginInit();
             bmp.UriSource = new Uri(fileName, UriKind.Relative);
