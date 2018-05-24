@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfMeme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Meme>
-    <Source>http://i0.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg</Source>
+    <Source>harold.jpg</Source>
     <Answers>
       <string>harold</string>
       <string>hide the pain harold</string>
     </Answers>
   </Meme>
   <Meme>
-    <Source>http://i0.kym-cdn.com/entries/icons/facebook/000/016/362/tumblr_nb7jgq9kcR1slfxluo1_1280.jpg</Source>
+    <Source>yeee.jpg</Source>
     <Answers>
       <string>yee</string>
       <string>yeee</string>
@@ -18,7 +18,7 @@
     </Answers>
   </Meme>
   <Meme>
-    <Source>https://avatanplus.com/files/resources/mid/58010d8663ef4157c41cd509.png</Source>
+    <Source>pepe.jpg</Source>
     <Answers>
       <string>pepe the frog</string>
       <string>pepe</string>
@@ -26,7 +26,7 @@
     </Answers>
   </Meme>
   <Meme>
-    <Source>http://i0.kym-cdn.com/entries/icons/original/000/018/433/wojak.jpg</Source>
+    <Source>wojak.jpg</Source>
     <Answers>
       <string>feels</string>
       <string>feels guy</string>
@@ -34,13 +34,13 @@
     </Answers>
   </Meme>
   <Meme>
-    <Source>https://i.ytimg.com/vi/6qXSEEL_H0Q/maxresdefault.jpg</Source>
+    <Source>pinkguy.jpg</Source>
     <Answers>
       <string>pink guy</string>
     </Answers>
   </Meme>
   <Meme>
-    <Source>https://lh3.googleusercontent.com/FL6MZ8D3kLyunWLB-mstp2PYsNL2_bkYPs3pp9lTJDL3rP0uO1sPu7RoDUiSRGLyTYDr3iZBXvg=w640-h400-e365</Source>
+    <Source>idubbbz.jpg</Source>
     <Answers>
       <string>idubbbz</string>
       <string>i`m gay</string>
@@ -48,7 +48,7 @@
     </Answers>
   </Meme>
   <Meme>
-    <Source>https://3xrowsd5xzn1nczoz32qcdku-wpengine.netdna-ssl.com/wp-content/uploads/2016/02/happy-birthday-rick-astley-481x336.jpg</Source>
+    <Source>rickroll.jpg</Source>
     <Answers>
       <string>rickroll</string>
       <string>rick astley</string>
@@ -56,7 +56,7 @@
     </Answers>
   </Meme>
   <Meme>
-    <Source>http://i1.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg</Source>
+    <Source>wednesday.jpg</Source>
     <Answers>
       <string>it is wednesday</string>
       <string>it is wednesday my dudes</string>
@@ -65,7 +65,7 @@
     </Answers>
   </Meme>
   <Meme>
-    <Source>https://avatanplus.com/files/resources/mid/57c0c0925bd44156c8f03bc8.png</Source>
+    <Source>shrek.jpg</Source>
     <Answers>
       <string>shrek</string>
     </Answers>

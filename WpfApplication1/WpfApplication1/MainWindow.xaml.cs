@@ -36,9 +36,12 @@ namespace WpfApplication1
                 list = (s.Deserialize(sr) as List<Meme>);
             }
             randomMeme = rand.Next(0, list.Count);
+            string fileName = list[randomMeme].Source;
+            string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"pictures\", fileName);
             BitmapImage bmp = new BitmapImage();
+            MessageBox.Show(path);
             bmp.BeginInit();
-            bmp.UriSource = new Uri(list[randomMeme].Source);
+            bmp.UriSource = new Uri(path);
             bmp.EndInit();
             mainImage.Source = bmp;
         }
@@ -81,9 +84,11 @@ namespace WpfApplication1
                                 break;
                             }
                         }
+                        string fileName = list[randomMeme].Source;
+                        string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"pictures\", fileName);
                         BitmapImage bmp = new BitmapImage();
                         bmp.BeginInit();
-                        bmp.UriSource = new Uri(list[randomMeme].Source);
+                        bmp.UriSource = new Uri(path);
                         bmp.EndInit();
                         mainImage.Source = bmp;
                         foreach (Button item in pictureCover.Children)
