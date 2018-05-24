@@ -16,6 +16,9 @@
       <string>yeeeee</string>
       <string>Yeeeee dinosaur</string>
     </Answers>
+    <LinkToMeme>
+      http://knowyourmeme.com/memes/yee
+    </LinkToMeme>    
   </Meme>
   <Meme>
     <Source>pepe.jpg</Source>
@@ -24,6 +27,9 @@
       <string>pepe</string>
       <string>feelsbadman</string>
     </Answers>
+    <LinkToMeme>
+      http://knowyourmeme.com/memes/pepe-the-frog
+    </LinkToMeme>
   </Meme>
   <Meme>
     <Source>wojak.jpg</Source>
@@ -32,12 +38,18 @@
       <string>feels guy</string>
       <string>wojak</string>
     </Answers>
+    <LinkToMeme>
+      http://knowyourmeme.com/memes/wojak-feels-guy
+    </LinkToMeme>
   </Meme>
   <Meme>
     <Source>pinkguy.jpg</Source>
     <Answers>
       <string>pink guy</string>
     </Answers>
+    <LinkToMeme>
+      http://knowyourmeme.com/memes/people/pink-guy
+    </LinkToMeme>
   </Meme>
   <Meme>
     <Source>idubbbz.jpg</Source>
@@ -46,6 +58,9 @@
       <string>i`m gay</string>
       <string>im gay</string>
     </Answers>
+    <LinkToMeme>
+      http://knowyourmeme.com/memes/idubbbzs-im-gay
+    </LinkToMeme>
   </Meme>
   <Meme>
     <Source>rickroll.jpg</Source>
@@ -54,6 +69,9 @@
       <string>rick astley</string>
       <string>rick roll</string>
     </Answers>
+    <LinkToMeme>
+      http://knowyourmeme.com/memes/rickroll
+    </LinkToMeme>
   </Meme>
   <Meme>
     <Source>wednesday.jpg</Source>
@@ -63,12 +81,18 @@
       <string>wednesday</string>
       <string>wednesday frog</string>
     </Answers>
+    <LinkToMeme>
+      http://knowyourmeme.com/memes/it-is-wednesday-my-dudes
+    </LinkToMeme>
   </Meme>
   <Meme>
     <Source>shrek.jpg</Source>
     <Answers>
       <string>shrek</string>
     </Answers>
+    <LinkToMeme>
+      http://knowyourmeme.com/memes/subcultures/shrek
+    </LinkToMeme>
   </Meme>
 
 </ArrayOfMeme>

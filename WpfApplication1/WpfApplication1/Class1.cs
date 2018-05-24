@@ -9,10 +9,11 @@ namespace WpfApplication1 {
 
         public string Source { set; get; }
         public List<string> Answers { get; set; }
+        public string LinkToMeme { set; get; }
         public Meme()
         {
             Answers = new List<string>();
-        }
+        }    
 
     }
 }

@@ -118,10 +118,11 @@ namespace WpfApplication1
                     break;
                 }
             }
-
+            string fileName = list[randomMeme].Source;
+            string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"pictures\", fileName);
             BitmapImage bmp = new BitmapImage();
                         bmp.BeginInit();
-                        bmp.UriSource = new Uri(list[randomMeme].Source);
+                        bmp.UriSource = new Uri(path);
                         bmp.EndInit();
                         mainImage.Source = bmp;
 
