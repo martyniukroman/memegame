@@ -29,7 +29,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Opacity="100"  Grid.Column="0" Grid.Row="0" Click="Button_Click"/>
+            <Button Grid.Column="0" Grid.Row="0" Click="Button_Click"/>
             <Button Grid.Column="1" Grid.Row="0" Click="Button_Click"/>
             <Button Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
             <Button Grid.Column="3" Grid.Row="0" Click="Button_Click"/>
@@ -66,7 +66,7 @@
             <Button Grid.Column="4" Grid.Row="0" Click="Button_Click"/>
             <Button Grid.Column="5" Grid.Row="0" Click="Button_Click"/>
         </Grid>
-        <Grid Grid.Column="1">
+        <Grid Background="LightGray" Name="GridRight" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="40"/>
@@ -76,6 +76,8 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <Label Content="Your answer" FontSize="16" HorizontalAlignment="Center" />
             <TextBox Margin="5" Name="AnswerBox" Grid.Row="1" FontSize="20" TextAlignment="Right">
@@ -83,7 +85,11 @@
                     Write your shitty answer here
                 </TextBox.ToolTip>
             </TextBox>
-            <Button Name="ButtonCheck" Margin="5" Grid.Row="2" Content="Check answer" FontSize="16" FontWeight="Bold" Click="checkAnswer_Click_1" />
+            <Button Name="ButtonCheck" Margin="5" Grid.Row="2" Content="Check answer" FontSize="16" FontWeight="Bold" Click="checkAnswer_Click_1">
+                <Button.ToolTip>
+                    Check if you ain't dildo
+                </Button.ToolTip>
+            </Button>
             <Button Name="ButtonSkip" Margin="5" Grid.Row="3" Content="Skip" FontSize="16" FontWeight="Bold" Click="ButtonSkip_Click">
                 <Button.ToolTip>
                     Skip this meme
@@ -96,7 +102,32 @@
             </Button>
             <Label Name="totalTriesLabel" Grid.Row="5" Content="Total tries: " FontSize="16"/>
             <Label Name="correctAnswersLabel" Grid.Row="6" Content="Correct answers: " FontSize="16"/>
+
+            <CheckBox Name="CheckBoxNightMode" Margin="5" FontSize="16" Grid.Row="7" Click="CheckBoxNightMode_Click">
+                <CheckBox.ToolTip>
+                    Cool night mode
+                </CheckBox.ToolTip>
+                Night Mode
+            </CheckBox>
+
+            <ComboBox Name="ComboBoxDifficulty" Margin="5" FontSize="14" Grid.Row="8" SelectionChanged="ComboBoxDifficulty_SelectionChanged">
+
+                <ComboBox.ToolTip>
+                    Select the difficulty
+                </ComboBox.ToolTip>
+                
+                <ComboBoxItem IsSelected="True">
+                    Easy
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Normal
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Hard
+                </ComboBoxItem>
+            </ComboBox>
             
+
         </Grid>
 
     </Grid>

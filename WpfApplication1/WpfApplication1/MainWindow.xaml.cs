@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
+using System.Windows.Media.Effects;
+
 namespace WpfApplication1
 {
     /// <summary>
@@ -34,9 +36,9 @@ namespace WpfApplication1
             InitializeComponent();
             XmlSerializer s = new XmlSerializer(typeof(List<Meme>));
             Uri uri = new Uri(@"memeBase.xml", UriKind.Relative);
-            using (StreamReader sr = new StreamReader(uri.ToString()))
+            using (StreamReader sr = new StreamReader(uri.ToString()))  // some shit goes here
             {
-                list = (s.Deserialize(sr) as List<Meme>);
+               list = (s.Deserialize(sr) as List<Meme>);
             }
             randomMeme = rand.Next(0, list.Count);
             string fileName = @"\pictures\" + list[randomMeme].Source;
@@ -155,6 +157,34 @@ namespace WpfApplication1
         private void ButtonAbout_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start(list[randomMeme].LinkToMeme);
+        }
+
+        private void ComboBoxDifficulty_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+            //todo
+
+            if (ComboBoxDifficulty.SelectedIndex == 1) {
+                try {
+                  //  (list[randomMeme].Source as Image).BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = (sender as Slider).Value };
+                }
+                catch (Exception) { }
+            }
+        }
+
+        private void CheckBoxNightMode_Click(object sender, RoutedEventArgs e) {
+
+            if((sender as CheckBox).IsChecked == true) {
+                GridRight.Background = new SolidColorBrush(Colors.Gray);
+                foreach (var item in pictureCover.Children) {
+                    Background = new SolidColorBrush(Colors.Gray);
+                }
+            }
+            else {
+                GridRight.Background = new SolidColorBrush(Colors.LightGray);
+                foreach (var item in pictureCover.Children) {
+                    Background = new SolidColorBrush(Colors.LightGray);
+                }
+            }
         }
     }
 }

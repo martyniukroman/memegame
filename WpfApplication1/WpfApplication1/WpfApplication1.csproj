@@ -97,7 +97,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="memeBase.xml" />
     <Resource Include="pictures\harold.jpg" />
     <Resource Include="pictures\idubbbz.jpg" />
     <Resource Include="pictures\pepe.jpg" />
@@ -110,6 +109,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="pictures\glob.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="memeBase.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
