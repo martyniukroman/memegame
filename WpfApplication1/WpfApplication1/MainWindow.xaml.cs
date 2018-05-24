@@ -33,17 +33,17 @@ namespace WpfApplication1
         {
             InitializeComponent();
             XmlSerializer s = new XmlSerializer(typeof(List<Meme>));
-            using (StreamReader sr = new StreamReader("memeBase.xml"))
+            Uri uri = new Uri("memeBase.xml", UriKind.Relative);
+            using (StreamReader sr = new StreamReader(uri.ToString()))
             {
                 list = (s.Deserialize(sr) as List<Meme>);
             }
             randomMeme = rand.Next(0, list.Count);
-            string fileName = list[randomMeme].Source;
-            string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"pictures\", fileName);
+            string fileName =@"\pictures\" + list[randomMeme].Source;
             BitmapImage bmp = new BitmapImage();
-            MessageBox.Show(path);
+            MessageBox.Show(fileName);
             bmp.BeginInit();
-            bmp.UriSource = new Uri(path);
+            bmp.UriSource = new Uri(fileName, UriKind.Relative);
             bmp.EndInit();
             mainImage.Source = bmp;
             //ButtonCheck.IsEnabled = true;
