@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "WpfApplication1\WpfApplication1.csproj", "{D1C308DE-71F0-464E-BA60-FE40E5F6553F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{BBAF1983-7E1F-4562-A1F6-756CF22093E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{D1C308DE-71F0-464E-BA60-FE40E5F6553F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1C308DE-71F0-464E-BA60-FE40E5F6553F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1C308DE-71F0-464E-BA60-FE40E5F6553F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBAF1983-7E1F-4562-A1F6-756CF22093E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBAF1983-7E1F-4562-A1F6-756CF22093E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBAF1983-7E1F-4562-A1F6-756CF22093E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBAF1983-7E1F-4562-A1F6-756CF22093E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB0A6107-7530-46F0-93B7-3A213378AD49}
 	EndGlobalSection
 EndGlobal
