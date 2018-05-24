@@ -122,12 +122,13 @@ namespace WpfApplication1
                     break;
                 }
             }
-
+            string fileName = list[randomMeme].Source;
+            string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"pictures\", fileName);
             BitmapImage bmp = new BitmapImage();
-            bmp.BeginInit();
-            bmp.UriSource = new Uri(list[randomMeme].Source);
-            bmp.EndInit();
-            mainImage.Source = bmp;
+                        bmp.BeginInit();
+                        bmp.UriSource = new Uri(path);
+                        bmp.EndInit();
+                        mainImage.Source = bmp;
 
             foreach (Button item in pictureCover.Children)
             {
@@ -139,7 +140,7 @@ namespace WpfApplication1
             totalTriesLabel.Content = "Total tries: " + totalTries.ToString();
             correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
 
-            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=csqJK8wwaHw");
+            System.Diagnostics.Process.Start(list[temp].LinkToMeme);
 
         }
 
