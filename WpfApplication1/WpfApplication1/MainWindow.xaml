@@ -72,6 +72,7 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="35"/>
                 <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
@@ -82,14 +83,19 @@
                     Write your shitty answer here
                 </TextBox.ToolTip>
             </TextBox>
-            <Button Margin="5" Grid.Row="2" Content="Check answer" FontSize="16" FontWeight="Bold" Click="checkAnswer_Click_1" />
+            <Button Name="ButtonCheck" Margin="5" Grid.Row="2" Content="Check answer" FontSize="16" FontWeight="Bold" Click="checkAnswer_Click_1" />
             <Button Name="ButtonSkip" Margin="5" Grid.Row="3" Content="Skip" FontSize="16" FontWeight="Bold" Click="ButtonSkip_Click">
                 <Button.ToolTip>
-                    You'll get link to current meme
+                    Skip this meme
                 </Button.ToolTip>
             </Button>
-            <Label Name="totalTriesLabel" Grid.Row="4" Content="Total tries: " FontSize="16"/>
-            <Label Name="correctAnswersLabel" Grid.Row="5" Content="Correct answers: " FontSize="16"/>
+            <Button Name="ButtonAbout" Margin="5" Grid.Row="4" Content="About" FontSize="16" FontWeight="Bold" Click="ButtonAbout_Click" >
+                <Button.ToolTip>
+                    Know your meme
+                </Button.ToolTip>
+            </Button>
+            <Label Name="totalTriesLabel" Grid.Row="5" Content="Total tries: " FontSize="16"/>
+            <Label Name="correctAnswersLabel" Grid.Row="6" Content="Correct answers: " FontSize="16"/>
             
         </Grid>
 
