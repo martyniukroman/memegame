@@ -68,18 +68,31 @@
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
                 <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
-            <Label Content="Your answer" HorizontalAlignment="Center" Width="74"/>
-            <TextBox Name="AnswerBox" Grid.Row="1" FontSize="20" TextAlignment="Right"/>
-            <Button Grid.Row="2" Content="Check answer" FontSize="17" FontWeight="Bold" Click="checkAnswer_Click_1" />
-            <Label Name="totalTriesLabel" Grid.Row="3" Content="Total tries: " FontSize="17"/>
-            <Label Name="correctAnswersLabel" Grid.Row="4" Content="Correct answers: " FontSize="17"/>
+            <Label Content="Your answer" FontSize="16" HorizontalAlignment="Center" />
+            <TextBox Margin="5" Name="AnswerBox" Grid.Row="1" FontSize="20" TextAlignment="Right">
+                <TextBox.ToolTip>
+                    Write your shitty answer here
+                </TextBox.ToolTip>
+            </TextBox>
+            <Button Margin="5" Grid.Row="2" Content="Check answer" FontSize="16" FontWeight="Bold" Click="checkAnswer_Click_1" />
+            <Button Name="ButtonSkip" Margin="5" Grid.Row="3" Content="Skip" FontSize="16" FontWeight="Bold" Click="ButtonSkip_Click">
+
+                <Button.ToolTip>
+                    You'll get link to current meme
+                </Button.ToolTip>
+                
+            </Button>
+            <Label Name="totalTriesLabel" Grid.Row="4" Content="Total tries: " FontSize="16"/>
+            <Label Name="correctAnswersLabel" Grid.Row="5" Content="Correct answers: " FontSize="16"/>
+            
         </Grid>
 
     </Grid>
