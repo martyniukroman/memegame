@@ -111,6 +111,21 @@ namespace WpfApplication1
                         bmp.UriSource = new Uri(path);
                              bmp.EndInit(); // crash here
                         mainImage.Source = bmp;
+
+                        // difficulty
+
+                        if (ComboBoxDifficulty.SelectedIndex == 0) {
+                            mainImage.BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = 0 };
+                        }
+
+                        if (ComboBoxDifficulty.SelectedIndex == 1) {
+                            mainImage.BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = 25 };
+                        }
+
+                        if (ComboBoxDifficulty.SelectedIndex == 2) {
+                            mainImage.BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = 50 };
+                        }
+
                         foreach (Button item in pictureCover.Children)
                         {
                             item.Opacity = 100;
@@ -147,6 +162,21 @@ namespace WpfApplication1
             bmp.UriSource = new Uri(path);
                 bmp.EndInit(); //crash here
             mainImage.Source = bmp;
+
+            // difficulty
+
+            if (ComboBoxDifficulty.SelectedIndex == 0) {
+                mainImage.BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = 0 };
+            }
+
+            if (ComboBoxDifficulty.SelectedIndex == 1) {
+                mainImage.BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = 25};
+            }
+
+            if (ComboBoxDifficulty.SelectedIndex == 2) {
+                mainImage.BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = 50 };
+            }
+
             foreach (Button item in pictureCover.Children)
             {
                 item.Opacity = 100;
@@ -165,14 +195,6 @@ namespace WpfApplication1
 
         private void ComboBoxDifficulty_SelectionChanged(object sender, SelectionChangedEventArgs e) {
 
-            //todo
-
-            if (ComboBoxDifficulty.SelectedIndex == 1) {
-                try {
-                  //  (list[randomMeme].Source as Image).BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = (sender as Slider).Value };
-                }
-                catch (Exception) { }
-            }
         }
 
         private void CheckBoxNightMode_Click(object sender, RoutedEventArgs e) {
