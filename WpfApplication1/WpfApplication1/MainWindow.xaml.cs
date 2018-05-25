@@ -17,13 +17,11 @@ using System.Xml.Serialization;
 using System.Xml;
 using System.Windows.Media.Effects;
 
-namespace WpfApplication1
-{
+namespace WpfApplication1 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
+    public partial class MainWindow : Window {
         public List<Meme> list;
         int randomMeme = 0;
         int correctAnswers = 0;
@@ -31,76 +29,62 @@ namespace WpfApplication1
         Random rand = new Random();
         public int ClickedButtonCounter = 0;
 
-        public MainWindow()
-        {
+        public MainWindow() {
             InitializeComponent();
             XmlSerializer s = new XmlSerializer(typeof(List<Meme>));
-           // Uri xmlFile = new Uri("memebase.xml");
-           // Uri uri = new Uri(@"memeBase.xml", UriKind.Relative);
-          //  string path = Uri.UnescapeDataString(uri.MakeRelativeUri(xmlFile).ToString().Replace('/', '\\'));
-          //  MessageBox.Show(path);
-            using (StreamReader sr = new StreamReader("memebase.xml"))
-            {
-               list = (s.Deserialize(sr) as List<Meme>);
+            // Uri xmlFile = new Uri("memebase.xml");
+            // Uri uri = new Uri(@"memeBase.xml", UriKind.Relative);
+            //  string path = Uri.UnescapeDataString(uri.MakeRelativeUri(xmlFile).ToString().Replace('/', '\\'));
+            //  MessageBox.Show(path);
+            using (StreamReader sr = new StreamReader("memebase.xml")) {
+                list = (s.Deserialize(sr) as List<Meme>);
             }
             randomMeme = rand.Next(0, list.Count);
             string fileName = @"\pictures\" + list[randomMeme].Source;
-        
-           BitmapImage bmp = new BitmapImage();
-           // MessageBox.Show(fileName);
+
+            BitmapImage bmp = new BitmapImage();
+            // MessageBox.Show(fileName);
             bmp.BeginInit();
             bmp.UriSource = new Uri(fileName, UriKind.Relative);
             bmp.EndInit();
             mainImage.Source = bmp;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (ClickedButtonCounter < 3)
-            {
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            if (ClickedButtonCounter < 3) {
                 (sender as Button).Opacity = 0;
                 ClickedButtonCounter++;
                 ButtonCheck.IsEnabled = true;
                 ButtonSkip.IsEnabled = true;
                 ButtonAbout.IsEnabled = false;
             }
-            else
-            {
+            else {
                 ButtonCheck.IsEnabled = false;
                 ButtonSkip.IsEnabled = true;
                 ButtonAbout.IsEnabled = true;
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (Button item in pictureCover.Children)
-            {
+        private void MenuItem_Click(object sender, RoutedEventArgs e) {
+            foreach (Button item in pictureCover.Children) {
                 item.Opacity = 100;
             }
         }
 
-        private void checkAnswer_Click_1(object sender, RoutedEventArgs e)
-        {
+        private void checkAnswer_Click_1(object sender, RoutedEventArgs e) {
             string lowercaseAnswer;
             int temp = randomMeme;
-            if (AnswerBox.Text != "")
-            {
-                for (int i = 0; i < list[randomMeme].Answers.Count; i++)
-                {
+            if (AnswerBox.Text != "") {
+                for (int i = 0; i < list[randomMeme].Answers.Count; i++) {
                     lowercaseAnswer = AnswerBox.Text.ToLower();
-                    if (list[randomMeme].Answers[i].Contains(lowercaseAnswer))
-                    {
+                    if (list[randomMeme].Answers[i].Contains(lowercaseAnswer)) {
                         correctAnswers++;
                         randomMeme = rand.Next(0, list.Count);
-                        while (true)
-                        {
-                            if (randomMeme == temp)
-                            {
+                        while (true) {
+                            if (randomMeme == temp) {
                                 randomMeme = rand.Next(0, list.Count);
                             }
-                            else
-                            {
+                            else {
                                 break;
                             }
                         }
@@ -109,7 +93,7 @@ namespace WpfApplication1
                         BitmapImage bmp = new BitmapImage();
                         bmp.BeginInit();
                         bmp.UriSource = new Uri(path);
-                             bmp.EndInit(); // crash here
+                        bmp.EndInit(); // crash here
                         mainImage.Source = bmp;
 
                         // difficulty
@@ -126,8 +110,7 @@ namespace WpfApplication1
                             mainImage.BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = 50 };
                         }
 
-                        foreach (Button item in pictureCover.Children)
-                        {
+                        foreach (Button item in pictureCover.Children) {
                             item.Opacity = 100;
                         }
                         break;
@@ -141,17 +124,13 @@ namespace WpfApplication1
             }
         }
 
-        private void ButtonSkip_Click(object sender, RoutedEventArgs e)
-        {
+        private void ButtonSkip_Click(object sender, RoutedEventArgs e) {
             int temp = randomMeme;
-            while (true)
-            {
-                if (randomMeme == temp)
-                {
+            while (true) {
+                if (randomMeme == temp) {
                     randomMeme = rand.Next(0, list.Count);
                 }
-                else
-                {
+                else {
                     break;
                 }
             }
@@ -160,7 +139,7 @@ namespace WpfApplication1
             BitmapImage bmp = new BitmapImage();
             bmp.BeginInit();
             bmp.UriSource = new Uri(path);
-                bmp.EndInit(); //crash here
+            bmp.EndInit(); //crash here
             mainImage.Source = bmp;
 
             // difficulty
@@ -170,15 +149,14 @@ namespace WpfApplication1
             }
 
             if (ComboBoxDifficulty.SelectedIndex == 1) {
-                mainImage.BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = 25};
+                mainImage.BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = 25 };
             }
 
             if (ComboBoxDifficulty.SelectedIndex == 2) {
                 mainImage.BitmapEffect = new BlurBitmapEffect() { KernelType = KernelType.Gaussian, Radius = 50 };
             }
 
-            foreach (Button item in pictureCover.Children)
-            {
+            foreach (Button item in pictureCover.Children) {
                 item.Opacity = 100;
             }
             ClickedButtonCounter = 0;
@@ -188,8 +166,7 @@ namespace WpfApplication1
             correctAnswersLabel.Content = "Correct answers: " + correctAnswers.ToString();
         }
 
-        private void ButtonAbout_Click(object sender, RoutedEventArgs e)
-        {
+        private void ButtonAbout_Click(object sender, RoutedEventArgs e) {
             System.Diagnostics.Process.Start(list[randomMeme].LinkToMeme);
         }
 
@@ -199,14 +176,14 @@ namespace WpfApplication1
 
         private void CheckBoxNightMode_Click(object sender, RoutedEventArgs e) {
 
-            if((sender as CheckBox).IsChecked == true) {
+            if ((sender as CheckBox).IsChecked == true) {
                 GridRight.Background = new SolidColorBrush(Colors.Gray);
                 foreach (var item in pictureCover.Children) {
                     (item as Button).Background = new SolidColorBrush(Colors.Gray);
                 }
                 foreach (var item in GridRight.Children) {
-                    if(item is Button)
-                    (item as Button).Background = new SolidColorBrush(Colors.Gray);
+                    if (item is Button)
+                        (item as Button).Background = new SolidColorBrush(Colors.Gray);
                 }
                 AnswerBox.Background = new SolidColorBrush(Colors.Gray);
             }
@@ -217,10 +194,21 @@ namespace WpfApplication1
                 }
                 foreach (var item in GridRight.Children) {
                     if (item is Button)
-                       (item as Button).Background = new SolidColorBrush(Colors.LightGray);
+                        (item as Button).Background = new SolidColorBrush(Colors.LightGray);
                 }
                 AnswerBox.Background = new SolidColorBrush(Colors.LightGray);
             }
         }
+
+        private void ButtonNewGame_Click(object sender, RoutedEventArgs e) {
+
+       //     this.ButtonSkip_Click(); // how to invoke this sheet
+
+            totalTries = 0;
+            correctAnswers = 0;
+            totalTriesLabel.Content = "Total tries: " + '0';
+            correctAnswersLabel.Content = "Correct answers: " + '0';
+        }
+
     }
 }

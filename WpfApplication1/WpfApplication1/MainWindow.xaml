@@ -73,6 +73,7 @@
                 <RowDefinition Height="35"/>
                 <RowDefinition Height="35"/>
                 <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
@@ -100,17 +101,24 @@
                     Know your meme
                 </Button.ToolTip>
             </Button>
-            <Label Name="totalTriesLabel" Grid.Row="5" Content="Total tries: " FontSize="16"/>
-            <Label Name="correctAnswersLabel" Grid.Row="6" Content="Correct answers: " FontSize="16"/>
 
-            <CheckBox Name="CheckBoxNightMode" Margin="5" FontSize="16" Grid.Row="7" Click="CheckBoxNightMode_Click">
+            <Button Name="ButtonNewGame" Margin="5" Grid.Row="5" Content="New game" FontSize="16" FontWeight="Bold" Click="ButtonNewGame_Click">
+                <Button.ToolTip>
+                    Start new fucking game
+                </Button.ToolTip>
+            </Button>
+
+            <Label Name="totalTriesLabel" Grid.Row="6" Content="Total tries: " FontSize="16"/>
+            <Label Name="correctAnswersLabel" Grid.Row="7" Content="Correct answers: " FontSize="16"/>
+
+            <CheckBox Name="CheckBoxNightMode" Margin="5" FontSize="16" Grid.Row="8" Click="CheckBoxNightMode_Click">
                 <CheckBox.ToolTip>
                     Cool night mode
                 </CheckBox.ToolTip>
                 Night Mode
             </CheckBox>
 
-            <ComboBox Name="ComboBoxDifficulty" Margin="5" FontSize="14" Grid.Row="8" SelectionChanged="ComboBoxDifficulty_SelectionChanged">
+            <ComboBox Name="ComboBoxDifficulty" Margin="5" FontSize="14" Grid.Row="9" SelectionChanged="ComboBoxDifficulty_SelectionChanged">
 
                 <ComboBox.ToolTip>
                     Select the difficulty
