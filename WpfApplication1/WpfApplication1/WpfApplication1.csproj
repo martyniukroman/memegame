@@ -123,8 +123,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="pictures\friend.jpg" />
-    <Resource Include="pictures\isthis.png" />
     <Resource Include="pictures\thisisamerica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\isthis.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -196,18 +196,37 @@ namespace WpfApplication1 {
                     if (item is Button)
                         (item as Button).Background = new SolidColorBrush(Colors.LightGray);
                 }
-                AnswerBox.Background = new SolidColorBrush(Colors.LightGray);
+                AnswerBox.Background = new SolidColorBrush(Colors.White);
             }
         }
 
         private void ButtonNewGame_Click(object sender, RoutedEventArgs e) {
 
        //     this.ButtonSkip_Click(); // how to invoke this sheet
-
+        foreach (Button item in pictureCover.Children) {
+                item.Opacity = 100;
+            }
             totalTries = 0;
             correctAnswers = 0;
             totalTriesLabel.Content = "Total tries: " + '0';
             correctAnswersLabel.Content = "Correct answers: " + '0';
+            randomMeme = rand.Next(0, list.Count);
+            //string fileName = @"\pictures\" + list[randomMeme].Source;
+            //string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"pictures\", fileName);
+            //BitmapImage bmp = new BitmapImage();
+            //bmp.BeginInit();
+            //bmp.UriSource = new Uri(path);
+            //bmp.EndInit(); 
+            //mainImage.Source = bmp;
+            randomMeme = rand.Next(0, list.Count);
+            string fileName = @"\pictures\" + list[randomMeme].Source;
+
+            BitmapImage bmp = new BitmapImage();
+            // MessageBox.Show(fileName);
+            bmp.BeginInit();
+            bmp.UriSource = new Uri(fileName, UriKind.Relative);
+            bmp.EndInit();
+            mainImage.Source = bmp;
         }
 
     }
