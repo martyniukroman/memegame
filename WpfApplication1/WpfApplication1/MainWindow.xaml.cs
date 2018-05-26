@@ -51,18 +51,20 @@ namespace WpfApplication1 {
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
-            if (ClickedButtonCounter < 3) {
+            if (ClickedButtonCounter < 3 && (sender as Button).IsEnabled == true) {
                 (sender as Button).Opacity = 0;
                 ClickedButtonCounter++;
                 ButtonCheck.IsEnabled = true;
                 ButtonSkip.IsEnabled = true;
                 ButtonAbout.IsEnabled = false;
+                (sender as Button).IsEnabled = false;
             }
             else {
                 ButtonCheck.IsEnabled = false;
                 ButtonSkip.IsEnabled = true;
                 ButtonAbout.IsEnabled = true;
             }
+            
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e) {
@@ -112,6 +114,7 @@ namespace WpfApplication1 {
 
                         foreach (Button item in pictureCover.Children) {
                             item.Opacity = 100;
+                            item.IsEnabled = true;
                         }
                         break;
                     }
@@ -158,6 +161,7 @@ namespace WpfApplication1 {
 
             foreach (Button item in pictureCover.Children) {
                 item.Opacity = 100;
+                item.IsEnabled = true;
             }
             ClickedButtonCounter = 0;
             totalTries++;
