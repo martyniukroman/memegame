@@ -209,6 +209,8 @@ namespace WpfApplication1 {
        //     this.ButtonSkip_Click(); // how to invoke this sheet
         foreach (Button item in pictureCover.Children) {
                 item.Opacity = 100;
+                item.IsEnabled = true;
+                ClickedButtonCounter = 0;
             }
             totalTries = 0;
             correctAnswers = 0;
